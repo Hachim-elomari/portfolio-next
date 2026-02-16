@@ -1,21 +1,74 @@
 @import "tailwindcss";
 
+/* Base theme tokens */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0b1220;
+  --foreground: #e5e7eb;
 }
 
-@media (prefers-color-scheme: dark) {
+/* Light mode auto si le système est en light */
+@media (prefers-color-scheme: light) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #ffffff;
+    --foreground: #0f172a;
   }
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji";
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
-.skillBubble:hover { transform: scale(1.05); background: #dcdde1; }
+/* Selection */
+::selection {
+  background: rgba(34, 211, 238, 0.35); /* cyan-ish */
+}
+
+/* Nice scrollbar (Chrome/Edge/Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(148, 163, 184, 0.12);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.35);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.55);
+}
+
+/* Background helper for sections (optional use) */
+.bg-dev-grid {
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(255, 255, 255, 0.18) 1px,
+    transparent 0
+  );
+  background-size: 28px 28px;
+}
+
+/* Small helpers */
+.container-app {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.section-title {
+  letter-spacing: -0.02em;
+}
+
+/* Card baseline (si tu veux l’utiliser en className="card") */
+.card {
+  border: 1px solid rgba(148, 163, 184, 0.15);
+  background: rgba(255, 255, 255, 0.04);
+}
