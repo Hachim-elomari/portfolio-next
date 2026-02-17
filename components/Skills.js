@@ -3,6 +3,8 @@ import {
   SiMariadb,
   SiMysql,
   SiOcaml,
+  SiC,
+  SiGo,
   SiKotlin,
   SiDart,
   SiHtml5,
@@ -30,7 +32,9 @@ const skillsByCategory = [
       { name: "JavaScript", icon: FaJs, color: "#F7DF1E", level: "Confort" },
       { name: "Kotlin", icon: SiKotlin, color: "#7F52FF", level: "Projet" },
       { name: "Dart", icon: SiDart, color: "#0175C2", level: "Projet" },
+      { name: "C", icon: SiC, color: "#0367a9", level: "Projet" },
       { name: "OCaml", icon: SiOcaml, color: "#EC6813", level: "Cours" },
+      { name: "Go", icon: SiGo, color: "#13e1ec", level: "Cours" },
     ],
   },
   {
