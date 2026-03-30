@@ -38,7 +38,7 @@ const projects = [
       { name: "PHP", icon: FaPhp, color: "#777BB4" },
       { name: "MySQL", icon: SiMysql, color: "#4479A1" },
     ],
-    link: "https://github.com/Hachim-elomari",
+    link: "",
   },
   {
     name: "Stage Développeur Web – Alvarium | 2025",
