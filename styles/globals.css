@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
-/* Base theme tokens */
+/* ═══ Theme tokens ═══ */
+/* Light mode = base */
 :root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+}
+
+/* Dark mode = when .dark class is on <html> */
+html.dark {
   --background: #0b1220;
   --foreground: #e5e7eb;
 }
 
-/* Light mode auto si le système est en light */
-@media (prefers-color-scheme: light) {
-  :root {
-    --background: #ffffff;
-    --foreground: #0f172a;
-  }
-}
-
+/* ═══ Base ═══ */
 html {
   scroll-behavior: smooth;
 }
@@ -27,27 +27,22 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Selection */
 ::selection {
-  background: rgba(34, 211, 238, 0.35); /* cyan-ish */
+  background: rgba(34, 211, 238, 0.35);
 }
 
-/* Nice scrollbar (Chrome/Edge/Safari) */
-::-webkit-scrollbar {
-  width: 10px;
-}
-::-webkit-scrollbar-track {
-  background: rgba(148, 163, 184, 0.12);
-}
+/* ═══ Scrollbar ═══ */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: rgba(148, 163, 184, 0.08); }
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.35);
+  background: rgba(148, 163, 184, 0.25);
   border-radius: 999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.55);
+  background: rgba(148, 163, 184, 0.45);
 }
 
-/* Background helper for sections (optional use) */
+/* ═══ Existing helpers ═══ */
 .bg-dev-grid {
   background-image: radial-gradient(
     circle at 1px 1px,
@@ -57,18 +52,212 @@ body {
   background-size: 28px 28px;
 }
 
-/* Small helpers */
-.container-app {
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.section-title {
-  letter-spacing: -0.02em;
-}
-
-/* Card baseline (si tu veux l’utiliser en className="card") */
+.container-app { max-width: 1100px; margin: 0 auto; }
+.section-title { letter-spacing: -0.02em; }
 .card {
   border: 1px solid rgba(148, 163, 184, 0.15);
   background: rgba(255, 255, 255, 0.04);
+}
+
+/* ═══════════════════════════════════════════
+   SCROLL-REVEAL SYSTEM
+   ═══════════════════════════════════════════ */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-stagger.visible > *:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.10s; }
+.reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.15s; }
+.reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.20s; }
+.reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.25s; }
+.reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.30s; }
+.reveal-stagger.visible > *:nth-child(7) { transition-delay: 0.35s; }
+.reveal-stagger.visible > *:nth-child(8) { transition-delay: 0.40s; }
+.reveal-stagger.visible > *:nth-child(9) { transition-delay: 0.45s; }
+.reveal-stagger.visible > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ═══ Hero entrance ═══ */
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(28px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.hero-enter { animation: heroFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; opacity: 0; }
+.hero-enter-1 { animation-delay: 0.1s; }
+.hero-enter-2 { animation-delay: 0.2s; }
+.hero-enter-3 { animation-delay: 0.35s; }
+.hero-enter-4 { animation-delay: 0.5s; }
+.hero-enter-5 { animation-delay: 0.65s; }
+.hero-enter-6 { animation-delay: 0.8s; }
+
+/* ═══ Status pulse ═══ */
+@keyframes pulse-ring {
+  0%   { transform: scale(1);   opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+.status-pulse { position: relative; }
+.status-pulse::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(52, 211, 153, 0.5);
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+/* ═══ Terminal cursor blink ═══ */
+@keyframes blink-caret {
+  50% { opacity: 0; }
+}
+.terminal-cursor::after {
+  content: "▋";
+  font-size: 0.85em;
+  color: rgba(34, 211, 238, 0.7);
+  animation: blink-caret 1s step-end infinite;
+}
+
+/* ═══════════════════════════════════════════
+   MICRO-INTERACTIONS
+   ═══════════════════════════════════════════ */
+
+/* Card lift */
+.card-hover {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.3s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15),
+              0 0 0 1px rgba(34, 211, 238, 0.08);
+}
+
+/* Button magnetic effect */
+.btn-magnetic {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.3s ease;
+}
+.btn-magnetic:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 24px rgba(34, 211, 238, 0.2);
+}
+.btn-magnetic:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Link arrow slide */
+.link-arrow { display: inline-flex; align-items: center; gap: 0.5rem; }
+.link-arrow span { transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1); }
+.link-arrow:hover span { transform: translateX(4px); }
+
+/* Tool badge pop */
+.tool-badge {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.25s ease, border-color 0.25s ease;
+}
+.tool-badge:hover { transform: scale(1.06); }
+
+/* Nav link underline */
+.nav-link { position: relative; }
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #22d3ee, #818cf8);
+  border-radius: 1px;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+.nav-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* ═══ Featured project glow border ═══ */
+.featured-glow { position: relative; overflow: hidden; }
+.featured-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.25), rgba(129, 140, 248, 0.15), transparent 60%);
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.featured-glow:hover::before { opacity: 1; }
+
+/* ═══ Section divider ═══ */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(
+    90deg, transparent, rgba(148, 163, 184, 0.15) 30%,
+    rgba(148, 163, 184, 0.15) 70%, transparent
+  );
+}
+
+/* ═══ Navbar glass morph ═══ */
+.navbar-glass {
+  transition: background 0.4s ease, border-color 0.4s ease,
+              box-shadow 0.4s ease, backdrop-filter 0.4s ease;
+}
+.navbar-glass.scrolled {
+  backdrop-filter: blur(16px) saturate(1.3);
+  /* Light mode default */
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.05);
+}
+html.dark .navbar-glass.scrolled {
+  background: rgba(11, 18, 32, 0.95);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ═══════════════════════════════════════════
+   SKILL SHOWCASE — the portfolio itself
+   proves dev ability with these touches
+   ═══════════════════════════════════════════ */
+
+/* Accessibility: keyboard focus */
+a:focus-visible, button:focus-visible {
+  outline: 2px solid rgba(34, 211, 238, 0.5);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Print stylesheet */
+@media print {
+  .no-print { display: none !important; }
+  body { background: #fff; color: #000; }
+  a[href]::after { content: " (" attr(href) ")"; font-size: 0.8em; color: #666; }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .reveal, .reveal-stagger > * { opacity: 1; transform: none; transition: none; }
+  .hero-enter { animation: none; opacity: 1; }
+  .card-hover:hover { transform: none; }
+  .status-pulse::after { animation: none; }
+  html { scroll-behavior: auto; }
 }

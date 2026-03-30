@@ -1,3 +1,4 @@
+import useScrollReveal from "../hooks/useScrollReveal"
 import Header from "../components/Header"
 import About from "../components/About"
 import Timeline from "../components/Timeline"
@@ -6,30 +7,24 @@ import Projects from "../components/Projects"
 import Contact from "../components/Contact"
 
 export default function Home() {
+  useScrollReveal()
+
   return (
-    <div className="min-h-screen bg-white text-slate-900 dark:bg-slate-950 dark:text-white">
+    <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-white">
       <Header />
 
       <main>
         <About />
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="h-px w-full bg-slate-200/70 dark:bg-white/10" />
-        </div>
+        <div className="section-divider mx-auto max-w-6xl" />
 
         <Timeline />
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="h-px w-full bg-slate-200/70 dark:bg-white/10" />
-        </div>
+        <div className="section-divider mx-auto max-w-6xl" />
 
         <Skills />
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="h-px w-full bg-slate-200/70 dark:bg-white/10" />
-        </div>
+        <div className="section-divider mx-auto max-w-6xl" />
 
         <Projects />
-        <div className="mx-auto max-w-6xl px-4">
-          <div className="h-px w-full bg-slate-200/70 dark:bg-white/10" />
-        </div>
+        <div className="section-divider mx-auto max-w-6xl" />
 
         <Contact />
       </main>
