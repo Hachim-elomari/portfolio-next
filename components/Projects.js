@@ -217,7 +217,7 @@ export default function Projects() {
             Projets & Expériences
           </h2>
           <p className="mt-3 text-slate-500 dark:text-white/60">
-            Une sélection orientée recruteur : stack, contexte, valeur.
+
           </p>
         </div>
 

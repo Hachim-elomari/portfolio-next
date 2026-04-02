@@ -58,7 +58,7 @@ export default function Timeline() {
             Parcours
           </h2>
           <p className="mt-3 text-slate-500 dark:text-white/60">
-            Formation & expérience — focus sur ce qui intéresse les recruteurs.
+            Formation & expérience.
           </p>
         </div>
 
