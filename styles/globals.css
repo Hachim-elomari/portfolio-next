@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* Tailwind v4 uses prefers-color-scheme by default.
+   This tells it to use the .dark class on <html> instead,
+   which is what useTheme.js toggles. Without this line,
+   every `dark:` utility class is silently ignored. */
+@custom-variant dark (&:where(.dark, .dark *));
+
 /* ═══ Theme tokens ═══ */
 /* Light mode = base */
 :root {
@@ -9,7 +15,7 @@
 
 /* Dark mode = when .dark class is on <html> */
 html.dark {
-  --background: #0b1220;
+  --background: #020617;
   --foreground: #e5e7eb;
 }
 
@@ -25,6 +31,21 @@ body {
     "Apple Color Emoji", "Segoe UI Emoji";
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+/* ═══ Global page background ═══
+   Light mode  → plain white (see body rule above)
+   Dark mode   → dot-grid + glow blobs, fixed so it stays
+                 identical behind every section, top to bottom */
+html.dark body {
+  background-color: #020617;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.13) 1px, transparent 0),
+    radial-gradient(700px circle at 8% -5%, rgba(34, 211, 238, 0.14), transparent 55%),
+    radial-gradient(700px circle at 100% 25%, rgba(99, 102, 241, 0.14), transparent 55%);
+  background-size: 28px 28px, auto, auto;
+  background-repeat: repeat, no-repeat, no-repeat;
+  background-attachment: fixed, fixed, fixed;
 }
 
 ::selection {
@@ -229,7 +250,7 @@ body {
   box-shadow: 0 1px 12px rgba(0, 0, 0, 0.05);
 }
 html.dark .navbar-glass.scrolled {
-  background: rgba(11, 18, 32, 0.95);
+  background: rgba(2, 6, 23, 0.85);
   border-bottom: 1px solid rgba(148, 163, 184, 0.08);
   box-shadow: 0 1px 12px rgba(0, 0, 0, 0.3);
 }
