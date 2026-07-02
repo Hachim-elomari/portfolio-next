@@ -41,9 +41,6 @@ export default function Header() {
           </nav>
 
           <div className="hidden sm:flex items-center gap-2">
-            {/* Theme toggle */}
-            
-
             <a
               href="/Mohammed_Hachim_Elomari_CV.pdf"
               target="_blank"
@@ -138,7 +135,7 @@ export default function Header() {
         {/* Status badge */}
         <div className="hero-enter hero-enter-1 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm text-white/80">
           <span className="status-pulse h-2 w-2 rounded-full bg-emerald-400" />
-          Disponible à partir d'avril 2026
+          Recherche alternance — Septembre 2026
         </div>
 
         <h1 className="hero-enter hero-enter-2 mt-6 text-5xl font-extrabold tracking-tight sm:text-6xl">
@@ -163,7 +160,7 @@ export default function Header() {
 > Développeur web fullstack (Brest)
 
 $ stack
-> Laravel • PHP • MySQL • Flutter • TailwindCSS
+> React • Next.js • Laravel • Flutter • Spring Boot
 
 $ focus
 > Projets concrets, code propre, Git, tests

@@ -1,6 +1,18 @@
-import { FaGraduationCap, FaBriefcase, FaMapMarkerAlt, FaCalendarAlt } from "react-icons/fa"
+import { FaGraduationCap, FaBriefcase, FaMapMarkerAlt, FaCalendarAlt, FaFlask } from "react-icons/fa"
 
 const items = [
+  {
+    type: "lab",
+    title: "Projet TAL — Analyse de Concepts Formels",
+    org: "Lab-STICC (UBO)",
+    location: "Brest, France",
+    date: "avril — juin 2026",
+    details: [
+      "Extension de l'outil Conexp-NG (Java) : analyse de concepts formels, treillis de Galois",
+      "Implémentation de groupes d'attributs pour filtrer et générer des treillis sur sous-ensembles",
+      "Transformation de données continues en valeurs booléennes via seuils",
+    ],
+  },
   {
     type: "education",
     title: "Master 1 Informatique — Parcours LSE",
@@ -9,19 +21,31 @@ const items = [
     date: "2025 — en cours",
     details: [
       "Développement logiciel & web, projets, POO, qualité",
-      "Objectif : stage 2–4 mois à partir d'avril 2026",
       "Recherche alternance Master 2 à partir de septembre 2026",
     ],
   },
   {
     type: "experience",
+    title: "CHOP' — App mobile de recrutement étudiant",
+    org: "Association Chop', Metz",
+    location: "Metz, France",
+    date: "sep 2025 — avril 2026",
+    details: [
+      "Conception et développement full-stack d'une app de recrutement étudiant (Android & iOS)",
+      "Mise en relation étudiants/entreprises : profils, CV, matching, communication (Flutter/Dart, Laravel/PHP, SQL)",
+      "Authentification sécurisée (CAPTCHA, sessions, validation des mots de passe)",
+      "Déploiement sur OrangeHost, ~200 téléchargements cumulés",
+    ],
+  },
+  {
+    type: "experience",
     title: "Stage Développeur Web (Laravel & IA)",
-    org: "Alvarium",
+    org: "Alvartech",
     location: "Lyon, France",
     date: "avril — juin 2025",
     details: [
       "Développement backend Laravel (PHP) + gestion emails (IMAP)",
-      "Intégration API IA (OpenAI) pour extraction de données (mails + PJ)",
+      "Intégration API IA (OpenAI GPT-4) pour extraction de données (mails + PJ)",
       "Conception MySQL + interface web de gestion des commandes",
     ],
   },
@@ -40,13 +64,14 @@ function IconBadge({ type }) {
   const style =
     type === "experience"
       ? "border-cyan-200 bg-cyan-50 text-cyan-600 dark:border-cyan-500/25 dark:bg-cyan-500/10 dark:text-cyan-300"
+      : type === "lab"
+      ? "border-indigo-200 bg-indigo-50 text-indigo-600 dark:border-indigo-500/25 dark:bg-indigo-500/10 dark:text-indigo-300"
       : "border-emerald-200 bg-emerald-50 text-emerald-600 dark:border-emerald-500/25 dark:bg-emerald-500/10 dark:text-emerald-300"
 
-  return (
-    <div className={`${base} ${style}`}>
-      {type === "experience" ? <FaBriefcase /> : <FaGraduationCap />}
-    </div>
-  )
+  const icon =
+    type === "experience" ? <FaBriefcase /> : type === "lab" ? <FaFlask /> : <FaGraduationCap />
+
+  return <div className={`${base} ${style}`}>{icon}</div>
 }
 
 export default function Timeline() {
@@ -114,21 +139,12 @@ export default function Timeline() {
             </h3>
 
             <div className="mt-4 grid gap-4 reveal-stagger">
-              <div className="card-hover rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-white/[0.06]">
-                <p className="text-sm font-semibold text-slate-900 dark:text-white">
-                  Stage (2 à 4 mois)
-                </p>
-                <p className="mt-1 text-sm text-slate-500 dark:text-white/60">
-                  À partir d'avril 2026 — développement web / logiciel, back-end, API, SQL.
-                </p>
-              </div>
-
-              <div className="card-hover rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-white/10 dark:bg-white/[0.06]">
+              <div className="card-hover rounded-2xl border border-teal-200 bg-teal-50 p-5 dark:border-teal-500/30 dark:bg-teal-500/10">
                 <p className="text-sm font-semibold text-slate-900 dark:text-white">
                   Alternance (Master 2)
                 </p>
-                <p className="mt-1 text-sm text-slate-500 dark:text-white/60">
-                  À partir de septembre 2026 — montée en compétence + livraison en prod.
+                <p className="mt-1 text-sm text-slate-600 dark:text-white/70">
+                  À partir de septembre 2026 — développement web / mobile, back-end, API, montée en compétence et livraison en prod.
                 </p>
               </div>
 

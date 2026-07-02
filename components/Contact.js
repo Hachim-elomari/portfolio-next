@@ -31,7 +31,7 @@ export default function Contact() {
                 Contact
               </h2>
               <p className="mt-3 text-slate-500 dark:text-white/60">
-                Disponible pour stage / alternance / CDI à partir d'avril 2026.
+                Disponible pour une alternance à partir de septembre 2026.
                 Réponse rapide par email.
               </p>
 
@@ -76,7 +76,7 @@ export default function Contact() {
               </div>
 
               <div className="mt-6 rounded-xl bg-slate-100 p-4 text-sm text-slate-600 dark:bg-white/[0.06] dark:text-white/70">
-                <span className="font-semibold text-slate-900 dark:text-white">Stack :</span> Laravel / PHP / MySQL / Flutter / Tailwind
+                <span className="font-semibold text-slate-900 dark:text-white">Stack :</span> React / Next.js / Laravel / Flutter / Spring Boot
               </div>
             </div>
           </div>

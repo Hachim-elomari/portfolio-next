@@ -1,17 +1,18 @@
 import {
   FaJava, FaPython, FaPhp, FaJs, FaGitAlt, FaCode,
-  FaMobileAlt, FaDesktop, FaGamepad, FaBriefcase,
+  FaMobileAlt, FaDesktop, FaGamepad, FaBriefcase, FaChartLine,
 } from "react-icons/fa"
 import {
   SiKotlin, SiDart, SiFlutter, SiLaravel, SiCodeigniter,
-  SiMysql, SiMariadb, SiHtml5, SiCss3, SiIntellijidea,
+  SiMysql, SiMariadb, SiPostgresql, SiHtml5, SiCss3, SiIntellijidea,
+  SiSpringboot, SiAngular,
 } from "react-icons/si"
 
 const projects = [
   {
     name: "CHOP'",
-    period: "2025 - En cours",
-    desc: "App Android/iOS pour étudiants & entreprises : profils, CV, match, chat, calendrier d'entretiens, suivi d'évaluations.",
+    period: "Sep 2025 - Avril 2026",
+    desc: "App Android/iOS pour étudiants & entreprises : profils, CV, match, chat, calendrier d'entretiens, suivi d'évaluations. ~200 téléchargements cumulés.",
     type: "Mobile + API",
     typeIcon: FaMobileAlt,
     highlights: ["Match & chat", "API Laravel", "SQL / auth"],
@@ -26,9 +27,25 @@ const projects = [
     featured: true,
   },
   {
-    name: "Stage Développeur Web – Alvarium",
+    name: "SmartFinance",
+    period: "En cours",
+    desc: "Tableau de bord financier personnel : suivi des dépenses, analyse des habitudes financières et planification d'objectifs d'épargne.",
+    type: "Web",
+    typeIcon: FaChartLine,
+    highlights: ["REST API", "JWT auth", "Dashboard"],
+    tools: [
+      { name: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" },
+      { name: "Angular", icon: SiAngular, color: "#DD0031" },
+      { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
+      { name: "Java", icon: FaJava, color: "#007396" },
+    ],
+    link: "https://github.com/Hachim-elomari",
+    featured: true,
+  },
+  {
+    name: "Stage Développeur Web – Alvartech",
     period: "2025",
-    desc: "Backend Laravel : IMAP, intégration API OpenAI, MySQL, interface commandes et automation.",
+    desc: "Backend Laravel : IMAP, intégration API OpenAI GPT-4, MySQL, interface commandes et automation.",
     type: "Expérience",
     typeIcon: FaBriefcase,
     highlights: ["Laravel backend", "IMAP", "API OpenAI"],
@@ -217,7 +234,7 @@ export default function Projects() {
             Projets & Expériences
           </h2>
           <p className="mt-3 text-slate-500 dark:text-white/60">
-
+            Ce que j'ai construit, de la prod aux projets perso.
           </p>
         </div>
 
@@ -226,7 +243,7 @@ export default function Projects() {
           <p className="mb-4 text-xs font-bold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
             ★ Projets phares
           </p>
-          <div className="grid gap-6 md:grid-cols-2 reveal-stagger">
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 reveal-stagger">
             {featured.map((p, idx) => (
               <ProjectCard key={idx} p={p} />
             ))}
