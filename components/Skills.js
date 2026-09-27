@@ -9,7 +9,7 @@ import {
 const skillsByCategory = [
   {
     category: "Langages",
-    note: "Ceux que j'utilise le plus, en projets comme en cours.",
+    note: "Langages utilisés dans mes projets universitaires et professionnels.",
     skills: [
       { name: "JavaScript", icon: FaJs, color: "#F7DF1E" },
       { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
@@ -25,7 +25,7 @@ const skillsByCategory = [
   },
   {
     category: "Web",
-    note: "Front-end, styles et frameworks JS.",
+    note: "Développement front-end et frameworks web.",
     skills: [
       { name: "React", icon: FaReact, color: "#61DAFB" },
       { name: "Next.js", icon: SiNextdotjs, color: "#000000" },
@@ -38,7 +38,7 @@ const skillsByCategory = [
   },
   {
     category: "Back-end & Mobile",
-    note: "Frameworks serveur et développement mobile.",
+    note: "Développement d'API, applications serveur et applications mobiles.",
     skills: [
       { name: "Laravel", icon: SiLaravel, color: "#FF2D20" },
       { name: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" },
@@ -48,7 +48,7 @@ const skillsByCategory = [
   },
   {
     category: "Bases de données",
-    note: "Modélisation, requêtes, intégration API.",
+    note: "Conception, requêtes et intégration avec les applications.",
     skills: [
       { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
       { name: "MySQL", icon: SiMysql, color: "#4479A1" },
@@ -57,7 +57,7 @@ const skillsByCategory = [
   },
   {
     category: "Outils & Qualité",
-    note: "Versioning, IDE, tests.",
+    note: "Versioning, environnements de développement et tests.",
     skills: [
       { name: "Git", icon: FaGitAlt, color: "#F05032" },
       { name: "GitHub", icon: SiGithub, color: "#24292e" },
@@ -79,7 +79,7 @@ export default function Skills() {
             Compétences
           </h2>
           <p className="mt-3 text-slate-500 dark:text-white/60">
-            Stack technique que j'utilise au quotidien.
+            Technologies et outils utilisés dans mes projets.
           </p>
         </div>
 
@@ -93,7 +93,9 @@ export default function Skills() {
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
                   {cat.category}
                 </h3>
-                <p className="mt-1 text-sm text-slate-500 dark:text-white/60">{cat.note}</p>
+                <p className="mt-1 text-sm text-slate-500 dark:text-white/60">
+                  {cat.note}
+                </p>
               </div>
 
               <div className="mt-5 flex flex-wrap gap-2">

@@ -12,7 +12,7 @@ export default function About() {
             À propos
           </h2>
           <p className="mt-3 text-slate-500 dark:text-white/60">
-            Qui je suis, ce que j'aime faire, et ce que je cherche.
+            Mon parcours, mes domaines de prédilection et ce que je recherche.
           </p>
         </div>
 
@@ -23,6 +23,7 @@ export default function About() {
               <span className="rounded-xl bg-slate-100 p-3 dark:bg-white/10">
                 <FaMapMarkerAlt className="text-slate-600 dark:text-white/80" />
               </span>
+
               <div>
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
                   Mohammed Hachim ELOMARI
@@ -34,11 +35,17 @@ export default function About() {
             </div>
 
             <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-white/70">
-              Je suis un dev full-stack qui adore construire des trucs concrets — des apps qu'on peut vraiment utiliser. Passionné par JavaScript, React et l'architecture logicielle, j'aime aussi bien coder une API robuste qu'une interface qui tue.
+              Étudiant en Master 2 Informatique, je m'intéresse particulièrement
+              au développement logiciel et à la conception d'applications web et
+              mobiles. J'aime travailler sur des projets concrets, de la conception
+              de l'API jusqu'à l'interface utilisateur.
             </p>
 
             <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-white/70">
-              J'ai pas peur d'explorer : Flutter mobile, intégration GPT-4 en production, Spring Boot... toujours en train d'apprendre en faisant. Ce que je cherche : du code de qualité, de l'impact, et une équipe motivée.
+              Mes expériences m'ont permis de travailler avec Java et Spring Boot,
+              Laravel, React, Angular et Flutter, ainsi qu'avec différentes bases
+              de données et API REST. Je cherche aujourd'hui à continuer à progresser
+              au sein d'une équipe et à contribuer à des projets utilisés en production.
             </p>
 
             <div className="mt-5 flex flex-wrap gap-2">
@@ -53,32 +60,34 @@ export default function About() {
             </div>
           </div>
 
-          {/* Card 2 - Formation & Alternance */}
+          {/* Card 2 - Formation */}
           <div className="card-hover rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-white/10 dark:bg-white/[0.04]">
             <div className="flex items-center gap-3">
               <span className="rounded-xl bg-slate-100 p-3 dark:bg-white/10">
                 <FaGraduationCap className="text-slate-600 dark:text-white/80" />
               </span>
+
               <div>
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
                   Formation
                 </h3>
                 <p className="text-sm text-slate-500 dark:text-white/60">
-                  Master 1 Informatique — UBO
+                  Master 2 Informatique - UBO
                 </p>
               </div>
             </div>
 
             <ul className="mt-4 space-y-2 text-sm text-slate-600 dark:text-white/70">
               <li>• Développement web : PHP/Laravel, React, Next.js, Angular</li>
+              <li>• Backend : Java, Spring Boot, API REST</li>
               <li>• Mobile : Flutter, Dart, Kotlin</li>
-              <li>• Backend : Spring Boot, Java, APIs REST</li>
               <li>• Bases de données : PostgreSQL, MySQL, MariaDB</li>
-              <li>• DevOps : Git, Docker basics, déploiement</li>
+              <li>• Outils : Git, GitHub, GitLab, Docker, CI/CD</li>
             </ul>
 
             <div className="mt-6 rounded-xl border border-teal-200 bg-teal-50 p-4 text-sm text-teal-700 dark:border-teal-500/30 dark:bg-teal-500/10 dark:text-teal-300">
-              <span className="font-semibold">Disponibilité :</span> Alternance Master 2 à partir de septembre 2026
+              <span className="font-semibold">Disponibilité :</span>{" "}
+              Stage de fin d'études de 4 à 6 mois à partir du 30 mars 2027
             </div>
           </div>
 
@@ -88,21 +97,22 @@ export default function About() {
               <span className="rounded-xl bg-slate-100 p-3 dark:bg-white/10">
                 <FaRocket className="text-slate-600 dark:text-white/80" />
               </span>
+
               <div>
                 <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
                   Ce que je recherche
                 </h3>
                 <p className="text-sm text-slate-500 dark:text-white/60">
-                  Alternance, mission concrète
+                  Stage de fin d'études
                 </p>
               </div>
             </div>
 
             <ul className="mt-4 space-y-2 text-sm leading-relaxed text-slate-600 dark:text-white/70">
-              <li>✓ Une équipe tech motivée où je peux vraiment contribuer</li>
-              <li>✓ Des projets concrets avec impact (features, API, architecture)</li>
-              <li>✓ Apprendre en faisant et progresser rapidement</li>
-              <li>✓ Du code qu'on maintient, qu'on améliore, pas du jetable</li>
+              <li>✓ Participer au développement de fonctionnalités concrètes</li>
+              <li>✓ Travailler sur des applications web ou des services backend</li>
+              <li>✓ Mettre en pratique mes connaissances en développement logiciel</li>
+              <li>✓ Continuer à progresser au contact d'une équipe expérimentée</li>
             </ul>
 
             <div className="mt-6 flex flex-wrap gap-3">

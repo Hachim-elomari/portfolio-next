@@ -7,8 +7,16 @@ export default function Contact() {
   const [copied, setCopied] = useState(false)
 
   const links = [
-    { name: "LinkedIn", url: "https://www.linkedin.com/in/mohammed-hachim-elomari-929162250/", icon: FaLinkedin },
-    { name: "GitHub", url: "https://github.com/Hachim-elomari", icon: FaGithub },
+    {
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/mohammed-hachim-elomari-929162250/",
+      icon: FaLinkedin,
+    },
+    {
+      name: "GitHub",
+      url: "https://github.com/Hachim-elomari",
+      icon: FaGithub,
+    },
   ]
 
   async function copyEmail() {
@@ -30,9 +38,10 @@ export default function Contact() {
               <h2 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
                 Contact
               </h2>
+
               <p className="mt-3 text-slate-500 dark:text-white/60">
-                Disponible pour une alternance à partir de septembre 2026.
-                Réponse rapide par email.
+                Je recherche un stage de fin d'études de 4 à 6 mois à partir du
+                30 mars 2027, avec une mobilité partout en France.
               </p>
 
               <div className="mt-6 flex flex-wrap gap-3">
@@ -61,6 +70,7 @@ export default function Contact() {
               <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
                 Me retrouver
               </h3>
+
               <div className="mt-4 flex flex-wrap gap-3">
                 {links.map((l) => (
                   <a
@@ -76,13 +86,16 @@ export default function Contact() {
               </div>
 
               <div className="mt-6 rounded-xl bg-slate-100 p-4 text-sm text-slate-600 dark:bg-white/[0.06] dark:text-white/70">
-                <span className="font-semibold text-slate-900 dark:text-white">Stack :</span> React / Next.js / Laravel / Flutter / Spring Boot
+                <span className="font-semibold text-slate-900 dark:text-white">
+                  Stack :
+                </span>{" "}
+                Java / Spring Boot / React / Angular / Laravel / Flutter
               </div>
             </div>
           </div>
 
           <footer className="mt-10 border-t border-slate-200 pt-6 text-sm text-slate-400 dark:border-white/10 dark:text-white/50 no-print">
-            © 2026 Mohammed Hachim ELOMARI — Tous droits réservés
+            © 2026 Mohammed Hachim ELOMARI - Tous droits réservés
           </footer>
         </div>
       </div>

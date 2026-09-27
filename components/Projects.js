@@ -1,6 +1,7 @@
 import {
   FaJava, FaPython, FaPhp, FaJs, FaGitAlt, FaCode,
   FaMobileAlt, FaDesktop, FaGamepad, FaBriefcase, FaChartLine,
+  FaFlask,
 } from "react-icons/fa"
 import {
   SiKotlin, SiDart, SiFlutter, SiLaravel, SiCodeigniter,
@@ -12,10 +13,10 @@ const projects = [
   {
     name: "CHOP'",
     period: "Sep 2025 - Avril 2026",
-    desc: "App Android/iOS pour étudiants & entreprises : profils, CV, match, chat, calendrier d'entretiens, suivi d'évaluations. ~200 téléchargements cumulés.",
+    desc: "Application mobile de mise en relation étudiants/entreprises avec gestion des profils, CV, matching et messagerie. Déployée sur Android et iOS, avec environ 200 téléchargements cumulés.",
     type: "Mobile + API",
     typeIcon: FaMobileAlt,
-    highlights: ["Match & chat", "API Laravel", "SQL / auth"],
+    highlights: ["Matching", "Messagerie", "API REST", "Authentification"],
     tools: [
       { name: "Flutter", icon: SiFlutter, color: "#02569B" },
       { name: "Dart", icon: SiDart, color: "#0175C2" },
@@ -28,27 +29,41 @@ const projects = [
   },
   {
     name: "SmartFinance",
-    period: "En cours",
-    desc: "Tableau de bord financier personnel : suivi des dépenses, analyse des habitudes financières et planification d'objectifs d'épargne.",
+    period: "Projet personnel - En cours",
+    desc: "Application full-stack de gestion financière personnelle avec suivi des dépenses, analyse des habitudes financières et planification d'objectifs d'épargne.",
     type: "Web",
     typeIcon: FaChartLine,
-    highlights: ["REST API", "JWT auth", "Dashboard"],
+    highlights: ["REST API", "JWT", "Dashboard", "Full-stack"],
     tools: [
       { name: "Spring Boot", icon: SiSpringboot, color: "#6DB33F" },
+      { name: "Java", icon: FaJava, color: "#007396" },
       { name: "Angular", icon: SiAngular, color: "#DD0031" },
       { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
-      { name: "Java", icon: FaJava, color: "#007396" },
     ],
     link: "https://github.com/Hachim-elomari",
     featured: true,
   },
   {
-    name: "Stage Développeur Web – Alvartech",
-    period: "2025",
-    desc: "Backend Laravel : IMAP, intégration API OpenAI GPT-4, MySQL, interface commandes et automation.",
+    name: "Conexp-NG",
+    period: "Avril - Juin 2026",
+    desc: "Extension d'un outil Java d'analyse de concepts formels. Ajout de groupes d'attributs et automatisation de la transformation de données continues en valeurs booléennes.",
+    type: "Java / Recherche",
+    typeIcon: FaFlask,
+    highlights: ["Java", "Treillis de Galois", "Automatisation"],
+    tools: [
+      { name: "Java", icon: FaJava, color: "#007396" },
+      { name: "Git", icon: FaGitAlt, color: "#F05032" },
+    ],
+    link: "",
+    featured: true,
+  },
+  {
+    name: "Stage Développement Web - Alvartech",
+    period: "Avril - Juin 2025",
+    desc: "Développement d'un backend Laravel avec gestion des e-mails via IMAP, intégration de l'API OpenAI GPT-4 et interface web de gestion des commandes.",
     type: "Expérience",
     typeIcon: FaBriefcase,
-    highlights: ["Laravel backend", "IMAP", "API OpenAI"],
+    highlights: ["Laravel", "IMAP", "API OpenAI", "MySQL"],
     tools: [
       { name: "Laravel", icon: SiLaravel, color: "#FF2D20" },
       { name: "PHP", icon: FaPhp, color: "#777BB4" },
@@ -56,92 +71,101 @@ const projects = [
       { name: "Git", icon: FaGitAlt, color: "#F05032" },
     ],
     link: "",
-    featured: true,
+    featured: false,
   },
   {
     name: "OlymPix",
     period: "2024",
-    desc: "Application concours PHP CodeIgniter + SQL avec UML, transactions et tests.",
+    desc: "Application web de gestion de concours développée avec PHP et CodeIgniter, avec modélisation UML, gestion des transactions et tests de validation.",
     type: "Web",
     typeIcon: FaDesktop,
-    highlights: ["Transactions SQL", "UML", "App concours"],
+    highlights: ["PHP", "CodeIgniter", "SQL", "UML"],
     tools: [
       { name: "PHP", icon: FaPhp, color: "#777BB4" },
       { name: "CodeIgniter", icon: SiCodeigniter, color: "#EF4223" },
       { name: "MySQL", icon: SiMysql, color: "#4479A1" },
     ],
     link: "https://github.com/Hachim-elomari",
+    featured: false,
   },
   {
     name: "Gestion VOD",
     period: "2024",
-    desc: "Application Java + JavaFX pour gestion location films + tests unitaires.",
+    desc: "Application Java avec JavaFX pour la gestion d'une plateforme de location de films : comptes, réservations, films, artistes et évaluations.",
     type: "Desktop",
     typeIcon: FaDesktop,
-    highlights: ["JavaFX", "Tests unitaires", "Architecture POO"],
+    highlights: ["Java", "JavaFX", "POO", "JUnit"],
     tools: [
       { name: "Java", icon: FaJava, color: "#007396" },
       { name: "JavaFX", icon: FaJava, color: "#007396" },
     ],
     link: "https://github.com/Hachim-elomari",
+    featured: false,
   },
   {
     name: "Ready2Scan",
     period: "2024",
-    desc: "Boutique surf en PHP + MariaDB + QR Code + UML.",
+    desc: "Application web de gestion d'une boutique de surf développée en PHP avec MariaDB et génération de QR codes.",
     type: "Web",
     typeIcon: FaDesktop,
-    highlights: ["MariaDB", "QR Code", "UML"],
+    highlights: ["PHP", "MariaDB", "QR Code", "UML"],
     tools: [
       { name: "PHP", icon: FaPhp, color: "#777BB4" },
       { name: "MariaDB", icon: SiMariadb, color: "#003545" },
       { name: "UML", icon: FaCode, color: "#3498db" },
     ],
     link: "https://github.com/Hachim-elomari",
+    featured: false,
   },
   {
     name: "Padlet Manager",
     period: "2023",
-    desc: "Plateforme web ressources adhérents : HTML/CSS/JS/PHP + MariaDB.",
+    desc: "Plateforme web de gestion de ressources avec authentification, opérations CRUD et base de données MariaDB.",
     type: "Web",
     typeIcon: FaDesktop,
-    highlights: ["CRUD", "Auth", "DB MariaDB"],
+    highlights: ["CRUD", "Authentification", "MariaDB"],
     tools: [
       { name: "HTML", icon: SiHtml5, color: "#E34F26" },
       { name: "CSS", icon: SiCss3, color: "#1572B6" },
-      { name: "JS", icon: FaJs, color: "#F7DF1E" },
+      { name: "JavaScript", icon: FaJs, color: "#F7DF1E" },
       { name: "PHP", icon: FaPhp, color: "#777BB4" },
       { name: "MariaDB", icon: SiMariadb, color: "#003545" },
     ],
     link: "https://github.com/Hachim-elomari",
+    featured: false,
   },
   {
     name: "Jeu 2048",
     period: "2025",
-    desc: "Jeu 2048 en Kotlin : grille dynamique, déplacements, score et UI.",
+    desc: "Implémentation du jeu 2048 en Kotlin avec grille dynamique, gestion des déplacements, calcul du score et interface utilisateur.",
     type: "Game / Kotlin",
     typeIcon: FaGamepad,
-    highlights: ["Logique de jeu", "UI", "Kotlin"],
+    highlights: ["Kotlin", "Logique de jeu", "UI"],
     tools: [
       { name: "Kotlin", icon: SiKotlin, color: "#7F52FF" },
       { name: "IntelliJ", icon: SiIntellijidea, color: "#6B57FF" },
     ],
     link: "https://github.com/Hachim-elomari",
+    featured: false,
   },
   {
     name: "Space Invaders",
     period: "2022",
-    desc: "Jeu Python : vagues d'ennemis et système de tir.",
+    desc: "Jeu développé en Python avec gestion des vagues d'ennemis, déplacements, tirs et collisions.",
     type: "Game / Python",
     typeIcon: FaGamepad,
-    highlights: ["Boucle de jeu", "Collisions", "Python"],
-    tools: [{ name: "Python", icon: FaPython, color: "#3776AB" }],
+    highlights: ["Python", "Boucle de jeu", "Collisions"],
+    tools: [
+      { name: "Python", icon: FaPython, color: "#3776AB" },
+    ],
     link: "https://github.com/Hachim-elomari",
+    featured: false,
   },
 ]
 
 function ProjectCard({ p }) {
   const isFeatured = p.featured
+
   return (
     <div
       className={`group card-hover rounded-2xl border p-6 shadow-sm ${
@@ -156,11 +180,14 @@ function ProjectCard({ p }) {
             <span className="rounded-lg bg-slate-100 p-2 dark:bg-white/10">
               <p.typeIcon className="text-slate-600 dark:text-white/80" />
             </span>
+
             <div>
               <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
                 {p.name}
               </h3>
-              <p className="text-xs text-slate-400 dark:text-white/40">{p.period}</p>
+              <p className="text-xs text-slate-400 dark:text-white/40">
+                {p.period}
+              </p>
             </div>
           </div>
 
@@ -170,13 +197,16 @@ function ProjectCard({ p }) {
                 ★ Phare
               </span>
             )}
+
             <span className="rounded-full border border-slate-200 px-3 py-1 text-xs text-slate-500 dark:border-white/10 dark:text-white/60">
               {p.type}
             </span>
           </div>
         </div>
 
-        <p className="mt-3 text-sm text-slate-600 dark:text-white/70">{p.desc}</p>
+        <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-white/70">
+          {p.desc}
+        </p>
 
         {p.highlights?.length ? (
           <div className="mt-4 flex flex-wrap gap-2">
@@ -233,8 +263,9 @@ export default function Projects() {
           <h2 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Projets & Expériences
           </h2>
+
           <p className="mt-3 text-slate-500 dark:text-white/60">
-            Ce que j'ai construit, de la prod aux projets perso.
+            Une sélection de projets web, mobile et logiciel.
           </p>
         </div>
 
@@ -243,6 +274,7 @@ export default function Projects() {
           <p className="mb-4 text-xs font-bold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
             ★ Projets phares
           </p>
+
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 reveal-stagger">
             {featured.map((p, idx) => (
               <ProjectCard key={idx} p={p} />
@@ -255,6 +287,7 @@ export default function Projects() {
           <p className="mb-4 text-xs font-bold uppercase tracking-widest text-slate-400 dark:text-white/40">
             Tous les projets
           </p>
+
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 reveal-stagger">
             {others.map((p, idx) => (
               <ProjectCard key={idx} p={p} />

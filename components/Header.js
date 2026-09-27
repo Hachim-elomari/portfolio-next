@@ -24,7 +24,7 @@ export default function Header() {
 
   return (
     <header className="relative overflow-hidden">
-      {/* ── Sticky nav ── */}
+      {/* Sticky nav */}
       <div className={`fixed top-0 left-0 right-0 z-50 navbar-glass ${scrolled ? "scrolled" : ""}`}>
         <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
           <a href="#" className="font-bold tracking-tight text-slate-900 dark:text-white">
@@ -57,10 +57,11 @@ export default function Header() {
               href="/Mohammed_Hachim_Elomari_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition dark:border-white/15 dark:bg-white/10 dark:text-white dark:hover:bg-white/15"
+              className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50 transition dark:border-white/15 dark:bg-white/10 dark:text-white"
             >
               <FaFilePdf /> Voir mon CV
             </a>
+
             <a
               href="#contact"
               className="btn-magnetic inline-flex items-center gap-2 rounded-full bg-cyan-600 px-4 py-2 text-sm font-semibold text-white hover:bg-cyan-500 transition dark:bg-cyan-500/90 dark:text-slate-950 dark:hover:bg-cyan-400"
@@ -75,9 +76,21 @@ export default function Header() {
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Menu"
           >
-            <span className={`h-0.5 w-6 rounded-full bg-slate-900 dark:bg-white transition-all duration-300 ${mobileOpen ? "translate-y-2 rotate-45" : ""}`} />
-            <span className={`h-0.5 w-6 rounded-full bg-slate-900 dark:bg-white transition-all duration-300 ${mobileOpen ? "opacity-0" : ""}`} />
-            <span className={`h-0.5 w-6 rounded-full bg-slate-900 dark:bg-white transition-all duration-300 ${mobileOpen ? "-translate-y-2 -rotate-45" : ""}`} />
+            <span
+              className={`h-0.5 w-6 rounded-full bg-slate-900 dark:bg-white transition-all duration-300 ${
+                mobileOpen ? "translate-y-2 rotate-45" : ""
+              }`}
+            />
+            <span
+              className={`h-0.5 w-6 rounded-full bg-slate-900 dark:bg-white transition-all duration-300 ${
+                mobileOpen ? "opacity-0" : ""
+              }`}
+            />
+            <span
+              className={`h-0.5 w-6 rounded-full bg-slate-900 dark:bg-white transition-all duration-300 ${
+                mobileOpen ? "-translate-y-2 -rotate-45" : ""
+              }`}
+            />
           </button>
         </div>
 
@@ -98,6 +111,7 @@ export default function Header() {
                 {n.label}
               </a>
             ))}
+
             <div className="flex gap-2 mt-2 pt-3 border-t border-slate-200 dark:border-white/10">
               <button
                 onClick={toggleTheme}
@@ -105,6 +119,7 @@ export default function Header() {
               >
                 {isDark ? <FaSun size={14} /> : <FaMoon size={14} />}
               </button>
+
               <a
                 href="/Mohammed_Hachim_Elomari_CV.pdf"
                 target="_blank"
@@ -112,6 +127,7 @@ export default function Header() {
               >
                 Voir CV
               </a>
+
               <a
                 href="#contact"
                 onClick={() => setMobileOpen(false)}
@@ -124,14 +140,12 @@ export default function Header() {
         </div>
       </div>
 
-      {/* ── Content ──
-          Compact hero: everyone's CTA buttons (GitHub / CV / Contact)
-          must be visible without scrolling on a standard laptop screen. */}
+      {/* Hero */}
       <div className="relative mx-auto max-w-6xl px-4 pb-10 pt-24 text-center">
         {/* Status badge */}
         <div className="hero-enter hero-enter-1 inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-1.5 text-sm text-slate-700 dark:border-white/15 dark:bg-white/5 dark:text-white/80">
           <span className="status-pulse h-2 w-2 rounded-full bg-emerald-400" />
-          Recherche alternance — Septembre 2026
+          Recherche stage de fin d'études - Mars 2027
         </div>
 
         <h1 className="hero-enter hero-enter-2 mt-5 text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl text-slate-900 dark:text-white">
@@ -139,7 +153,7 @@ export default function Header() {
         </h1>
 
         <p className="hero-enter hero-enter-3 mx-auto mt-3 max-w-2xl text-base sm:text-lg text-slate-600 dark:text-white/80">
-          Étudiant en Master Informatique • Développeur Web Full-Stack • 📍Brest, France
+          Étudiant en Master 2 Informatique • Développeur Full-Stack • 📍Brest, France
         </p>
 
         {/* Terminal card */}
@@ -150,24 +164,37 @@ export default function Header() {
             <span className="h-3 w-3 rounded-full bg-green-400/80" />
             <span className="ml-3 text-sm text-slate-400 dark:text-white/60">~/portfolio</span>
           </div>
+
           <div className="mt-3 space-y-2.5 font-mono text-sm leading-snug text-slate-700 dark:text-white/80">
             <div>
               <p>$ whoami</p>
-              <p className="text-slate-500 dark:text-white/60">&gt; Développeur web fullstack (Brest)</p>
+              <p className="text-slate-500 dark:text-white/60">
+                &gt; Développeur web full-stack (Brest)
+              </p>
             </div>
+
             <div>
               <p>$ stack</p>
-              <p className="text-slate-500 dark:text-white/60">&gt; React • Next.js • Laravel • Flutter • Spring Boot</p>
+              <p className="text-slate-500 dark:text-white/60">
+                &gt; Java • Spring Boot • React • Angular • Laravel • Flutter
+              </p>
             </div>
+
             <div>
               <p>$ focus</p>
-              <p className="text-slate-500 dark:text-white/60">&gt; Projets concrets, code propre, Git, tests</p>
+              <p className="text-slate-500 dark:text-white/60">
+                &gt; Développement logiciel, API REST, bases de données
+              </p>
             </div>
+
             <div>
               <p>$ contact --now</p>
-              <p className="text-slate-500 dark:text-white/60">&gt; email / linkedin / github</p>
+              <p className="text-slate-500 dark:text-white/60">
+                &gt; email / linkedin / github
+              </p>
             </div>
           </div>
+
           <div className="mt-2 text-sm text-slate-400 dark:text-white/50 terminal-cursor">
             <span className="text-cyan-600 dark:text-cyan-400">❯</span> _
           </div>
@@ -183,14 +210,16 @@ export default function Header() {
           >
             <FaGithub /> GitHub
           </a>
+
           <a
             href="/Mohammed_Hachim_Elomari_CV.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-magnetic inline-flex items-center gap-2 rounded-full bg-cyan-600 px-5 py-2.5 font-semibold text-white hover:bg-cyan-500 transition dark:bg-cyan-500/90 dark:text-slate-950 dark:hover:bg-cyan-400"
+            className="btn-magnetic inline-flex items-center gap-2 rounded-full bg-cyan-600 px-5 py-2.5 font-semibold text-white hover:bg-cyan-500 transition dark:bg-cyan-500/90 dark:text-slate-950"
           >
             <FaFilePdf /> Télécharger CV
           </a>
+
           <a
             href="#contact"
             className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-5 py-2.5 font-semibold text-slate-700 hover:bg-slate-50 transition dark:border-white/15 dark:bg-white/10 dark:text-white dark:hover:bg-white/15"

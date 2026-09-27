@@ -1,121 +1,116 @@
-import { FaGraduationCap, FaBriefcase, FaMapMarkerAlt, FaCalendarAlt, FaFlask, FaRocket } from "react-icons/fa"
-
 const education = [
   {
     type: "future",
     title: "Master 2 Informatique",
     org: "Université de Bretagne Occidentale (UBO)",
+    logo: "/logos/ubo.png",
+    alt: "Logo Université de Bretagne Occidentale",
     location: "Brest, France",
     date: "2026 — 2027",
     details: [
-      "Dernière année de Master, en alternance",
-      "Spécialisation développement logiciel & architecture",
+      "Dernière année de Master",
+      "Développement logiciel, conception d'applications et projets informatiques",
     ],
   },
   {
     type: "education",
-    title: "Master 1 Informatique — Parcours LSE",
+    title: "Master 1 Informatique - Parcours LSE",
     org: "Université de Bretagne Occidentale (UBO)",
+    logo: "/logos/ubo.png",
+    alt: "Logo Université de Bretagne Occidentale",
     location: "Brest, France",
     date: "2025 — 2026",
     details: [
-      "Développement logiciel & web, projets, POO, qualité",
-      "Recherche alternance Master 2 à partir de septembre 2026",
+      "Développement logiciel et web, programmation orientée objet, qualité logicielle",
+      "Projets universitaires en Java, Go et développement logiciel",
     ],
   },
   {
     type: "education",
     title: "Licence Informatique",
     org: "Université de Bretagne Occidentale (UBO)",
+    logo: "/logos/ubo.png",
+    alt: "Logo Université de Bretagne Occidentale",
     location: "Brest, France",
     date: "2021 — 2025",
-    details: ["Bases solides : Java, Python, SQL, Web", "Projets : UML, transactions, tests"],
+    details: [
+      "Bases solides en Java, Python, SQL et développement web",
+      "Projets : UML, bases de données, transactions et tests",
+    ],
   },
 ]
 
 const experience = [
   {
-    type: "future",
-    title: "Alternance — chez vous ? 👀",
-    org: "Poste à pourvoir à partir de septembre 2026",
-    location: "Brest ou ailleurs en France",
-    date: "sept 2026 — 2027",
-    details: [
-      "Prêt à rejoindre une équipe tech et contribuer rapidement",
-      "Sérieux, motivé, et disponible pour un engagement d'un an",
-    ],
-  },
-  {
     type: "lab",
-    title: "Projet TAL — Analyse de Concepts Formels",
+    title: "Stage TAL - Analyse de Concepts Formels",
     org: "Lab-STICC (UBO)",
+    logo: "/logos/lab-sticc.png",
+    alt: "Logo Lab-STICC",
     location: "Brest, France",
     date: "avril — juin 2026",
     details: [
-      "Extension de l'outil Conexp-NG (Java) : analyse de concepts formels, treillis de Galois",
-      "Implémentation de groupes d'attributs pour filtrer et générer des treillis sur sous-ensembles",
-      "Transformation de données continues en valeurs booléennes via seuils",
+      "Extension de l'outil Conexp-NG en Java pour l'analyse de concepts formels et les treillis de Galois",
+      "Implémentation de groupes d'attributs pour filtrer et générer des treillis sur des sous-ensembles de données",
+      "Automatisation de la transformation de données continues en valeurs booléennes à partir de seuils",
     ],
   },
   {
     type: "experience",
-    title: "CHOP' — App mobile de recrutement étudiant",
-    org: "Association Chop', Metz",
+    title: "CHOP' - Application mobile de recrutement étudiant",
+    org: "Association Chop'",
+    logo: "/logos/chop.png",
+    alt: "Logo CHOP'",
     location: "Metz, France",
-    date: "sep 2025 — avril 2026",
+    date: "sept 2025 — avril 2026",
     details: [
-      "Conception et développement full-stack d'une app de recrutement étudiant (Android & iOS)",
-      "Mise en relation étudiants/entreprises : profils, CV, matching, communication (Flutter/Dart, Laravel/PHP, SQL)",
-      "Authentification sécurisée (CAPTCHA, sessions, validation des mots de passe)",
-      "Déploiement sur OrangeHost, ~200 téléchargements cumulés",
+      "Conception et développement full-stack d'une application de recrutement étudiant pour Android et iOS",
+      "Développement des profils, CV, matching et messagerie avec Flutter, Laravel et SQL",
+      "Mise en place d'une authentification sécurisée avec CAPTCHA, gestion des sessions et validation des mots de passe",
+      "Déploiement sur OrangeHost, avec environ 200 téléchargements cumulés",
     ],
   },
   {
     type: "experience",
-    title: "Stage Développeur Web (Laravel & IA)",
+    title: "Stage - Développement Web & Intégration IA",
     org: "Alvartech",
+    logo: "/logos/alvartech.png",
+    alt: "Logo Alvartech",
     location: "Lyon, France",
     date: "avril — juin 2025",
     details: [
-      "Développement backend Laravel (PHP) + gestion emails (IMAP)",
-      "Intégration API IA (OpenAI GPT-4) pour extraction de données (mails + PJ)",
-      "Conception MySQL + interface web de gestion des commandes",
+      "Développement du backend en Laravel (PHP) et automatisation de la gestion des e-mails via IMAP",
+      "Intégration de l'API OpenAI GPT-4 pour automatiser l'extraction de données depuis les e-mails et pièces jointes",
+      "Conception de la base de données MySQL et développement de l'interface web de gestion des commandes",
     ],
   },
 ]
 
-function IconBadge({ type }) {
-  const base = "flex h-10 w-10 items-center justify-center rounded-xl border shadow-sm shrink-0"
-  const style =
-    type === "experience"
-      ? "border-cyan-200 bg-cyan-50 text-cyan-600 dark:border-cyan-500/25 dark:bg-cyan-500/10 dark:text-cyan-300"
-      : type === "lab"
-      ? "border-indigo-200 bg-indigo-50 text-indigo-600 dark:border-indigo-500/25 dark:bg-indigo-500/10 dark:text-indigo-300"
-      : type === "future"
-      ? "border-violet-300 bg-violet-50 text-violet-600 dark:border-violet-400/30 dark:bg-violet-500/10 dark:text-violet-300"
-      : "border-emerald-200 bg-emerald-50 text-emerald-600 dark:border-emerald-500/25 dark:bg-emerald-500/10 dark:text-emerald-300"
-
-  const icon =
-    type === "experience" ? <FaBriefcase /> :
-    type === "lab" ? <FaFlask /> :
-    type === "future" ? <FaRocket /> :
-    <FaGraduationCap />
-
-  return <div className={`${base} ${style}`}>{icon}</div>
+function LogoBadge({ src, alt }) {
+  return (
+    <div className="flex h-14 w-14 shrink-0 items-center justify-center overflow-hidden rounded-xl border border-slate-200 bg-white p-2 shadow-sm dark:border-white/10 dark:bg-white">
+      <img
+        src={src}
+        alt={alt}
+        className="max-h-full max-w-full object-contain"
+      />
+    </div>
+  )
 }
 
 function TimelineColumn({ items }) {
   return (
     <div className="relative">
-      <div className="absolute left-5 top-0 h-full w-px bg-gradient-to-b from-cyan-300 via-slate-200 to-transparent dark:from-cyan-400/40 dark:via-white/10" />
+      <div className="absolute left-7 top-0 h-full w-px bg-gradient-to-b from-cyan-300 via-slate-200 to-transparent dark:from-cyan-400/40 dark:via-white/10" />
 
       <div className="space-y-6">
         {items.map((it, idx) => {
           const isFuture = it.type === "future"
+
           return (
-            <div key={idx} className="relative pl-16 reveal">
+            <div key={idx} className="relative pl-20 reveal">
               <div className="absolute left-0 top-0">
-                <IconBadge type={it.type} />
+                <LogoBadge src={it.logo} alt={it.alt} />
               </div>
 
               <div
@@ -130,7 +125,10 @@ function TimelineColumn({ items }) {
                     <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
                       {it.title}
                     </h3>
-                    <p className="text-sm text-slate-500 dark:text-white/60">{it.org}</p>
+
+                    <p className="text-sm text-slate-500 dark:text-white/60">
+                      {it.org}
+                    </p>
                   </div>
 
                   <span
@@ -140,12 +138,12 @@ function TimelineColumn({ items }) {
                         : "border-slate-200 bg-white text-slate-600 dark:border-white/10 dark:bg-white/[0.06] dark:text-white/70"
                     }`}
                   >
-                    <FaCalendarAlt /> {it.date}
+                    {it.date}
                   </span>
                 </div>
 
-                <div className="mt-3 inline-flex items-center gap-2 text-sm text-slate-500 dark:text-white/60">
-                  <FaMapMarkerAlt /> {it.location}
+                <div className="mt-3 text-sm text-slate-500 dark:text-white/60">
+                  {it.location}
                 </div>
 
                 <ul className="mt-4 space-y-2 text-sm text-slate-600 dark:text-white/70">
@@ -170,6 +168,7 @@ export default function Timeline() {
           <h2 className="text-4xl font-extrabold tracking-tight text-slate-900 dark:text-white">
             Parcours
           </h2>
+
           <p className="mt-3 text-slate-500 dark:text-white/60">
             Formation & expérience.
           </p>
@@ -181,6 +180,7 @@ export default function Timeline() {
             <p className="mb-5 text-xs font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400">
               🎓 Formation
             </p>
+
             <TimelineColumn items={education} />
           </div>
 
@@ -189,6 +189,7 @@ export default function Timeline() {
             <p className="mb-5 text-xs font-bold uppercase tracking-widest text-cyan-600 dark:text-cyan-400">
               💼 Expérience professionnelle
             </p>
+
             <TimelineColumn items={experience} />
           </div>
         </div>
